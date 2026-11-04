@@ -308,6 +308,22 @@ details.how p{color:var(--muted);font-size:14px;margin:8px 0 0}
 .pk-empty{padding:4px 6px 8px}
 .pk-foot{position:absolute;left:0;right:0;bottom:0;padding:14px max(18px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));background:linear-gradient(to bottom,transparent,var(--paper) 35%)}
 .pk-foot .btn{animation:up .2s ease}
+/* dedication */
+:root{--goomba:#B5744A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--goomba:#9C6440}}
+:root[data-theme="dark"]{--goomba:#9C6440}
+.brand-name{min-width:0;line-height:1.2}
+.dedic{margin-left:auto;display:flex;align-items:center;gap:7px;border:0;background:none;padding:2px 0 2px 6px;text-align:right;color:var(--ink);flex:none}
+.dedic-txt{display:flex;flex-direction:column;line-height:1.08;font-family:var(--f-display);font-size:15px}
+.dedic-txt small{font-family:var(--f-body);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.goomba{width:38px;height:38px;display:block;transform-origin:50% 100%}
+.goomba svg{width:100%;height:100%;overflow:visible}
+.goomba.hop{animation:hop .55s cubic-bezier(.3,.7,.4,1)}
+@keyframes hop{0%,100%{transform:none}35%{transform:translateY(-10px) rotate(-7deg)}62%{transform:translateY(0) scale(1.1,.88)}80%{transform:scale(.97,1.04)}}
+.heart-pop{position:fixed;pointer-events:none;z-index:70;width:20px;height:20px;animation:pop .95s ease-out both}
+.heart-pop svg{width:100%;height:100%;overflow:visible}
+@keyframes pop{from{transform:translate(-50%,0) scale(.5);opacity:1}to{transform:translate(-50%,-52px) scale(1.15);opacity:0}}
+@media (max-width:350px){.brand-name{display:none}}
 @keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
 @keyframes fade{from{opacity:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -448,6 +464,7 @@ const ICONS={
   sparkle:`<path d="M16 4l2.5 9.5L28 16l-9.5 2.5L16 28l-2.5-9.5L4 16l9.5-2.5z" fill="var(--f-citrus)"/>`,
   fondant:`<path d="M5 20v3c0 3 5 5 11 5s11-2 11-5v-3" fill="var(--f-pink)"/><ellipse cx="16" cy="20" rx="11" ry="5" fill="var(--f-pink)"/><rect x="5" y="8" width="22" height="5" rx="2.5" fill="var(--f-nut)" transform="rotate(-12 16 10.5)"/>`,
   heart:`<path d="M16 26C8 20 5 16 5 12a5.5 5.5 0 0 1 11-1 5.5 5.5 0 0 1 11 1c0 4-3 8-11 14z" fill="var(--f-pink)"/>`,
+  heartb:`<path d="M16 26C8 20 5 16 5 12a5.5 5.5 0 0 1 11-1 5.5 5.5 0 0 1 11 1c0 4-3 8-11 14z" fill="var(--f-berry)"/>`,
   bowl:`<path d="M10.5 15c1-3.3 3.2-5 5.5-5s4.5 1.7 5.5 5" fill="var(--f-pink)"/><path d="M4.5 15h23a11.5 10 0 0 1-23 0z" fill="var(--f-cream)"/>`,
   box:`<path d="M5 12l11-5 11 5v11l-11 5-11-5z" fill="var(--f-cream)"/><path d="M5 12l11 5 11-5M16 17v11"/><path d="M10.5 9.5l11 5v4.5" style="stroke:var(--f-berry)" stroke-width="2.2"/>`,
   board:`<path d="M4 17v3c0 2.8 5.4 5 12 5s12-2.2 12-5v-3" fill="var(--f-citrus)"/><ellipse cx="16" cy="17" rx="12" ry="5" fill="var(--paper)"/><ellipse cx="16" cy="17" rx="7" ry="2.6" opacity=".35"/>`,
@@ -461,6 +478,7 @@ const ICONS={
   piping:`<path d="M5 7.5l20 5L13.5 26z" fill="var(--paper)"/><path d="M13.5 26l-1 3 2.5-1.5" fill="var(--f-nut)"/><path d="M5 7.5c-1.5 2-.5 4 1.5 4.5"/>`,
   mould:`<path d="M5 13v8c0 2.5 4.9 4.5 11 4.5s11-2 11-4.5v-8" fill="var(--f-cream)"/><ellipse cx="16" cy="13" rx="11" ry="4.5" fill="var(--paper)"/>`,
   topper:`<path d="M16 28V13"/><path d="M16 4l2 4 4.5.6-3.3 3 .8 4.4-4-2.1-4 2.1.8-4.4-3.3-3 4.5-.6z" fill="var(--f-citrus)"/>`,
+  goomba:`<ellipse cx="9.5" cy="27.6" rx="4.6" ry="2.4" fill="var(--f-choco)"/><ellipse cx="22.5" cy="27.6" rx="4.6" ry="2.4" fill="var(--f-choco)"/><path d="M10 20.5h12v3.2a3.3 3.3 0 0 1-3.3 3.3h-5.4a3.3 3.3 0 0 1-3.3-3.3z" fill="var(--f-cream)"/><path d="M3.5 18.2C3.5 10 9 4.5 16 4.5s12.5 5.5 12.5 13.7c0 2-1.5 3-3.5 3H7c-2 0-3.5-1-3.5-3z" fill="var(--goomba)"/><ellipse cx="12.4" cy="14.6" rx="2.3" ry="3.1" fill="var(--paper)"/><ellipse cx="19.6" cy="14.6" rx="2.3" ry="3.1" fill="var(--paper)"/><ellipse cx="12.9" cy="15.4" rx="1" ry="1.6" fill="var(--ic-line)"/><ellipse cx="19.1" cy="15.4" rx="1" ry="1.6" fill="var(--ic-line)"/><path d="M8.8 10.6l5 2.2M23.2 10.6l-5 2.2" stroke-width="2.1"/><path d="M12.6 20.2c2.3-1.3 4.5-1.3 6.8 0"/><path d="M13.3 20.1l.9-1.9.9 1.5zM17 19.7l.9-1.5.9 1.9z" fill="var(--paper)"/><circle cx="7.6" cy="17.3" r="1.5" fill="var(--f-berry)" opacity=".55" stroke-width="0"/><circle cx="24.4" cy="17.3" r="1.5" fill="var(--f-berry)" opacity=".55" stroke-width="0"/>`,
   glove:`<path d="M10 28V15l-2-5a1.5 1.5 0 0 1 2.8-1L13 13V6a1.5 1.5 0 0 1 3 0v6-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v13c0 4-2 6-5 8z" fill="var(--f-blue)"/>`
 };
 (function(){
@@ -884,7 +902,7 @@ function render(){
   else if(S.view==="settings")main.innerHTML=viewSettings();
   else main.innerHTML=viewRecipes();
 }
-function brand(){return `<div class="brand">${I.cup}<span class="brand-name">Calculateur pâtisserie</span></div>`}
+function brand(){return `<div class="brand">${I.cup}<span class="brand-name">Calculateur pâtisserie</span><button class="dedic" data-act="goomba" aria-label="Fait pour Goombouille"><span class="dedic-txt"><small>fait pour</small>Goombouille</span><span class="goomba"><svg viewBox="0 0 32 32"><use href="#ic-goomba"/></svg></span></button></div>`}
 function statusBanner(){
   if(S.readonly)return `<div class="banner warn">Lecture seule. Pour modifier, il te faut l'accès « Éditeur » à cette page.</div>`;
   if(S.slow)return `<div class="banner info">Tes données mettent du temps à arriver. Ce qui s'affiche peut dater un peu.</div>`;
@@ -1430,6 +1448,10 @@ document.addEventListener("click",e=>{
   switch(act){
     case "nav":if(S.view==="recipe")commitDraft();S.draft=null;S.openId=null;S.view=a.dataset.view;saveUi();render();window.scrollTo(0,0);break;
     case "new-recipe":newRecipe();break;
+    case "goomba":{
+      const g=a.querySelector(".goomba");g.classList.remove("hop");void g.offsetWidth;g.classList.add("hop");
+      if(!reduceMotion){const rc=g.getBoundingClientRect();for(let k=0;k<3;k++){const h=document.createElement("span");h.className="heart-pop";h.innerHTML='<svg viewBox="0 0 32 32"><use href="#ic-heartb"/></svg>';h.style.left=(rc.left+rc.width/2+(k-1)*15)+"px";h.style.top=(rc.top-6)+"px";h.style.animationDelay=(k*110)+"ms";document.body.appendChild(h);setTimeout(()=>h.remove(),1400)}}
+      break;}
     case "open":openRecipe(a.dataset.id);break;
     case "back":leaveRecipe();break;
     case "tab":S.tab=a.dataset.tab;commitDraft();render();window.scrollTo(0,0);break;
