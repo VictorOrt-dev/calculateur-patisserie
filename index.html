@@ -324,6 +324,46 @@ details.how p{color:var(--muted);font-size:14px;margin:8px 0 0}
 .heart-pop svg{width:100%;height:100%;overflow:visible}
 @keyframes pop{from{transform:translate(-50%,0) scale(.5);opacity:1}to{transform:translate(-50%,-52px) scale(1.15);opacity:0}}
 @media (max-width:350px){.brand-name{display:none}}
+/* envies */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tab{padding:6px 8px}
+.btn.sm{padding:9px 14px;font-size:14px}
+.qadd{display:flex;flex-direction:column;gap:10px}
+.qadd textarea{width:100%;border:1.5px solid transparent;background:var(--bg);border-radius:12px;padding:11px 12px;font-size:16px;resize:none;min-height:46px;line-height:1.35;color:var(--ink)}
+.qadd textarea:focus{outline:none;border-color:var(--rose)}
+.qa-row{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.qa-prev{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.seg .cnt{margin-left:6px;font-size:12px;opacity:.7;font-variant-numeric:tabular-nums}
+.chip.src{background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--line);color:var(--ink)}
+.chip.src i{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.dot-berry{background:var(--f-berry)}.dot-ink{background:var(--ink)}.dot-bad{background:var(--bad)}.dot-orange{background:var(--f-orange)}.dot-blue{background:var(--f-blue)}.dot-muted{background:var(--muted)}
+.idea{background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.idea.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,40%{box-shadow:0 0 0 3px var(--rose),var(--shadow)}100%{box-shadow:var(--shadow)}}
+.idea-main{width:100%;border:0;background:none;text-align:left;display:grid;grid-template-columns:42px 1fr;gap:12px;padding:14px 14px 10px;align-items:start}
+.idea-txt{min-width:0;display:flex;flex-direction:column;gap:4px}
+.idea-txt b{font-family:var(--f-display);font-weight:400;font-size:18px;line-height:1.2;overflow-wrap:anywhere}
+.idea-txt small{color:var(--muted);font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;overflow-wrap:anywhere}
+.idea-txt .chips{margin-top:2px}
+.idea-acts{display:flex;gap:8px;flex-wrap:wrap;padding:0 14px 14px 68px}
+.mini{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;background:var(--bg);color:var(--ink);font-weight:800;font-size:13px;padding:7px 12px;text-decoration:none;line-height:1.2}
+.mini svg{width:15px;height:15px;flex:none}
+.mini.strong{background:var(--accent);color:var(--accent-ink)}
+.hearts{display:inline-flex;gap:2px}
+.hearts svg{width:17px;height:17px;overflow:visible}
+.hearts svg:not(.on){opacity:.35}
+.rate{display:flex;gap:6px}
+.rate button{border:0;background:var(--bg);border-radius:12px;width:46px;height:46px;display:grid;place-items:center}
+.rate svg{width:28px;height:28px;overflow:visible;opacity:.25;filter:grayscale(1);transition:transform .15s,opacity .15s}
+.rate button[aria-pressed="true"] svg{opacity:1;filter:none;transform:scale(1.08)}
+.url-row{display:flex;gap:8px}
+.url-row input{flex:1}
+.url-src{display:flex;align-items:center;gap:10px}
+.url-src:empty{display:none}
+.field-stack{display:flex;flex-direction:column;gap:14px}
+.bk-banner{display:grid;grid-template-columns:34px 1fr;gap:8px 12px;background:var(--warn-soft);color:var(--ink);border-radius:var(--r);padding:12px 14px;font-size:14px;align-items:start}
+.bk-banner b{display:block;color:var(--warn)}
+.bk-acts{grid-column:2;display:flex;gap:14px;align-items:center}
 @keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
 @keyframes fade{from{opacity:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -341,6 +381,9 @@ details.how p{color:var(--muted);font-size:14px;margin:8px 0 0}
     <button class="tab" data-act="nav" data-view="recipes" id="tab-recipes">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 13h16v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 13c0-3 3.6-5 8-5s8 2 8 5"/><path d="M12 8V5"/><circle cx="12" cy="4" r="1.2"/><path d="M4 16c2 1.2 3.4 1.2 5.3 0s3.4-1.2 5.4 0 3.3 1.2 5.3 0"/></svg>
       Recettes</button>
+    <button class="tab" data-act="nav" data-view="ideas" id="tab-ideas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 4h11a2 2 0 0 1 2 2v14H8a2 2 0 0 1-2-2z"/><path d="M6 18a2 2 0 0 1 2-2h11"/><path d="M12.5 12.4c-1.9-1.2-2.6-2.2-2-3 .5-.5 1.4-.4 2 .4.6-.8 1.5-.9 2-.4.6.8-.1 1.8-2 3z"/></svg>
+      Envies</button>
     <button class="tab" data-act="nav" data-view="ings" id="tab-ings">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M7 7h10l1 3v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-9z"/><path d="M8 3h8v4H8z"/><path d="M9 14h6"/></svg>
       Ingrédients</button>
@@ -366,6 +409,10 @@ const UNITS={g:{base:"g",f:1},kg:{base:"g",f:1000},ml:{base:"ml",f:1},cl:{base:"
 const UNIT_LIST=["g","kg","ml","cl","L","pce"];
 const DEFAULTS={hourlyRate:12,ovenRate:0.5,fixedCost:1,lossPct:5,chargesPct:0,rounding:1};
 const CACHE_KEY="patiss.cache.v1", LOCAL_KEY="patiss.local.v1", UI_KEY="patiss.ui.v1";
+const IDEA_ST=[["envie","Envies"],["afaire","À faire"],["testee","Testées"]];
+const SOURCES=[[/(^|\.)instagram\.com$|(^|\.)instagr\.am$/,"Instagram","berry"],[/(^|\.)tiktok\.com$/,"TikTok","ink"],[/(^|\.)pinterest\.[a-z.]+$|(^|\.)pin\.it$/,"Pinterest","bad"],[/(^|\.)youtube\.com$|(^|\.)youtu\.be$/,"YouTube","orange"],[/(^|\.)facebook\.com$|(^|\.)fb\.watch$/,"Facebook","blue"]];
+const IDEA_GUESS=[[/layer|gateau|gâteau|cake|entremets|fraisier|framboisier|number|bavarois|foret noire|opera|charlotte|cheesecake|tiramisu|trianon|royal/,"cakeslice"],[/tarte|tartelette|crumble/,"tart"],[/cookie|sable|biscuit|financier|madeleine|brownie|fondant/,"cookie"],[/macaron/,"macaron"],[/chou|eclair|paris.brest|religieuse|profiterole|saint.honore|craquelin/,"choux"],[/croissant|brioche|viennois|pain au|kouign|cruffin|babka|cinnamon roll|roule/,"croissant"],[/cupcake|muffin/,"cupcake"],[/meringue|pavlova|vacherin/,"powder"]];
+const BK_KEY="patiss.backup.v1";
 
 const I={
   chev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
@@ -376,6 +423,10 @@ const I={
   search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></svg>',
   check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
   edit:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
+  paste:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="12" height="16" rx="2"/><path d="M9 5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9.5 12h5M9.5 16h3"/></svg>',
+  cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></svg>',
+  calc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01" stroke-width="2.6"/></svg>',
+  ext:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
   copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>',
   cup:'<svg viewBox="0 0 40 40" fill="none"><path d="M8 14h20v9a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9z" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><path d="M28 17h2.5a3.5 3.5 0 0 1 0 7H28" stroke="var(--accent)" stroke-width="2"/><ellipse cx="18" cy="14" rx="10" ry="2.6" fill="var(--rose-soft)" stroke="var(--accent)" stroke-width="2"/><path d="M18 21.5c-2.6-1.6-3.6-3-2.7-4 .7-.7 1.9-.5 2.7.5.8-1 2-1.2 2.7-.5.9 1-.1 2.4-2.7 4z" fill="var(--rose)"/><path d="M14 4c-1 1.5 1 2.5 0 4M20 3c-1 1.5 1 2.5 0 4" stroke="var(--muted)" stroke-width="1.6" stroke-linecap="round"/></svg>',
   cake:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M12 34h40v18a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2z" fill="var(--rose-soft)"/><path d="M12 40c4 3 7 3 10 0s6-3 10 0 6 3 10 0 6-3 10 0"/><path d="M16 34c0-6 7-10 16-10s16 4 16 10"/><path d="M32 24v-8"/><path d="M32 9c-2 2-2 4 0 6 2-2 2-4 0-6z" fill="currentColor"/></svg>'
@@ -479,6 +530,12 @@ const ICONS={
   mould:`<path d="M5 13v8c0 2.5 4.9 4.5 11 4.5s11-2 11-4.5v-8" fill="var(--f-cream)"/><ellipse cx="16" cy="13" rx="11" ry="4.5" fill="var(--paper)"/>`,
   topper:`<path d="M16 28V13"/><path d="M16 4l2 4 4.5.6-3.3 3 .8 4.4-4-2.1-4 2.1.8-4.4-3.3-3 4.5-.6z" fill="var(--f-citrus)"/>`,
   goomba:`<ellipse cx="9.5" cy="27.6" rx="4.6" ry="2.4" fill="var(--f-choco)"/><ellipse cx="22.5" cy="27.6" rx="4.6" ry="2.4" fill="var(--f-choco)"/><path d="M10 20.5h12v3.2a3.3 3.3 0 0 1-3.3 3.3h-5.4a3.3 3.3 0 0 1-3.3-3.3z" fill="var(--f-cream)"/><path d="M3.5 18.2C3.5 10 9 4.5 16 4.5s12.5 5.5 12.5 13.7c0 2-1.5 3-3.5 3H7c-2 0-3.5-1-3.5-3z" fill="var(--goomba)"/><ellipse cx="12.4" cy="14.6" rx="2.3" ry="3.1" fill="var(--paper)"/><ellipse cx="19.6" cy="14.6" rx="2.3" ry="3.1" fill="var(--paper)"/><ellipse cx="12.9" cy="15.4" rx="1" ry="1.6" fill="var(--ic-line)"/><ellipse cx="19.1" cy="15.4" rx="1" ry="1.6" fill="var(--ic-line)"/><path d="M8.8 10.6l5 2.2M23.2 10.6l-5 2.2" stroke-width="2.1"/><path d="M12.6 20.2c2.3-1.3 4.5-1.3 6.8 0"/><path d="M13.3 20.1l.9-1.9.9 1.5zM17 19.7l.9-1.5.9 1.9z" fill="var(--paper)"/><circle cx="7.6" cy="17.3" r="1.5" fill="var(--f-berry)" opacity=".55" stroke-width="0"/><circle cx="24.4" cy="17.3" r="1.5" fill="var(--f-berry)" opacity=".55" stroke-width="0"/>`,
+  cakeslice:`<path d="M6 13h20v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1z" fill="var(--f-cream)"/><path d="M6 17.5h20M6 22h20" style="stroke:var(--f-berry)" stroke-width="1.8"/><path d="M6 13c0-2 2-3 4-3h12c2 0 4 1 4 3z" fill="var(--f-pink)"/><path d="M16 9.5c0-2 .8-3.5 2-4.5"/><circle cx="16" cy="8.4" r="2.6" fill="var(--f-berry)"/>`,
+  tart:`<path d="M4 17h24l-2.5 7a2 2 0 0 1-1.9 1.4H8.4A2 2 0 0 1 6.5 24z" fill="var(--f-nut)"/><path d="M8 24.5l-.6-6M12 25.3l-.3-7M16 25.4V18M20 25.3l.3-7M24 24.5l.6-6" opacity=".45"/><ellipse cx="16" cy="17" rx="12" ry="3.2" fill="var(--f-butter)"/><circle cx="11" cy="15.6" r="2.4" fill="var(--f-berry)"/><circle cx="16.5" cy="14.8" r="2.4" fill="var(--f-berry)"/><circle cx="21.5" cy="15.8" r="2.4" fill="var(--f-berry)"/>`,
+  cookie:`<circle cx="16" cy="16" r="11" fill="var(--f-nut)"/><path d="M11 12h.01M19 10.5h.01M21.5 18h.01M13 20.5h.01M16.5 15.5h.01" style="stroke:var(--f-choco)" stroke-width="3.2"/>`,
+  macaron:`<path d="M6 18c0 4 4.5 6.5 10 6.5S26 22 26 18z" fill="var(--f-pink)"/><rect x="6.5" y="14" width="19" height="4" rx="2" fill="var(--f-cream)"/><path d="M6 14c0-4.5 4.5-7 10-7s10 2.5 10 7z" fill="var(--f-pink)"/>`,
+  choux:`<path d="M4.5 18.5c0-3 2.5-5.5 5.5-5.5h12c3 0 5.5 2.5 5.5 5.5s-2.5 5.5-5.5 5.5H10c-3 0-5.5-2.5-5.5-5.5z" fill="var(--f-nut)"/><path d="M5.5 16c.8-1.8 2.5-3 4.5-3h12c2 0 3.7 1.2 4.5 3z" fill="var(--f-choco)"/><path d="M10 15h.01M15 14.6h.01M20 15h.01" style="stroke:var(--paper)" stroke-width="1.8"/>`,
+  croissant:`<path d="M4 20.5c2-7.5 7-11.5 12-11.5s10 4 12 11.5c-2 1-4 0-5-2-1 3-4 4.5-7 4.5s-6-1.5-7-4.5c-1 2-3 3-5 2z" fill="var(--f-butter)"/><path d="M10.5 13l2.3 8.5M16 10.5v12M21.5 13l-2.3 8.5" opacity=".5"/>`,
   glove:`<path d="M10 28V15l-2-5a1.5 1.5 0 0 1 2.8-1L13 13V6a1.5 1.5 0 0 1 3 0v6-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v13c0 4-2 6-5 8z" fill="var(--f-blue)"/>`
 };
 (function(){
@@ -692,12 +749,12 @@ function iconOf(ing){return (ing&&ing.icon&&ICONS[ing.icon])?ing.icon:guessIcon(
 const S={
   ings:{},recipes:{},settings:{...DEFAULTS},
   mode:"loading",slow:false,readonly:false,
-  view:"recipes",openId:null,tab:"compo",ingKind:"ingredient",q:"",iq:"",
+  view:"recipes",openId:null,tab:"compo",ingKind:"ingredient",q:"",iq:"",ideas:{},ideaTab:"envie",idq:"",backTo:null,
   draft:null
 };
 const ui=lsGet(UI_KEY);
-if(ui){S.view=ui.view==="recipe"?"recipes":(ui.view||"recipes");S.ingKind=ui.ingKind||"ingredient"}
-function saveUi(){lsSet(UI_KEY,{view:S.view,ingKind:S.ingKind})}
+if(ui){S.view=ui.view==="recipe"?"recipes":(ui.view||"recipes");S.ingKind=ui.ingKind||"ingredient";S.ideaTab=ui.ideaTab||"envie"}
+function saveUi(){lsSet(UI_KEY,{view:S.view,ingKind:S.ingKind,ideaTab:S.ideaTab})}
 
 let db=null;
 
@@ -804,9 +861,9 @@ async function flush(path){
 }
 function isWriting(path){const q=wq[path];return q&&(q.busy||q.next!==undefined)}
 function saveLocal(){
-  if(S.mode==="local")lsSet(LOCAL_KEY,{ings:S.ings,recipes:S.recipes,settings:S.settings});
+  if(S.mode==="local")lsSet(LOCAL_KEY,{ings:S.ings,recipes:S.recipes,ideas:S.ideas,settings:S.settings});
 }
-function saveCache(){if(S.mode==="db")lsSet(CACHE_KEY,{ings:S.ings,recipes:S.recipes,settings:S.settings})}
+function saveCache(){if(S.mode==="db")lsSet(CACHE_KEY,{ings:S.ings,recipes:S.recipes,ideas:S.ideas,settings:S.settings})}
 
 function putIng(id,data){S.ings[id]=data;setDoc("ingredients/"+id,data);saveCache()}
 function delIng(id){delete S.ings[id];setDoc("ingredients/"+id,null);saveCache()}
@@ -834,7 +891,7 @@ function commitDraft(){
 /* ---------- boot ---------- */
 function applyData(o){
   if(!o)return;
-  S.ings=o.ings||{};S.recipes=o.recipes||{};S.settings={...DEFAULTS,...(o.settings||{})};
+  S.ings=o.ings||{};S.recipes=o.recipes||{};S.ideas=o.ideas||{};S.settings={...DEFAULTS,...(o.settings||{})};
 }
 const cached=lsGet(CACHE_KEY);
 if(cached)applyData(cached);
@@ -871,6 +928,10 @@ render();
     }
     refresh();
   },onErr);
+  db.collection("ideas").onSnapshot(snap=>{
+    const o={};snap.docs.forEach(d=>{o[d.id]=d.data()});
+    S.ideas=o;saveCache();refresh();
+  },onErr);
   db.doc("settings/main").onSnapshot(snap=>{
     if(snap.exists&&!setTimer){S.settings={...DEFAULTS,...snap.data()}}
     got.s=true;saveCache();refresh();
@@ -890,6 +951,195 @@ function refresh(){
 let pendingRender=false;
 document.addEventListener("focusout",()=>{setTimeout(()=>{if(pendingRender){const a=document.activeElement;if(!(a&&(a.tagName==="INPUT"||a.tagName==="TEXTAREA"))){pendingRender=false;needFull=false;render()}}},50)});
 
+/* ---------- envies (idées & inspis) ---------- */
+function findUrl(text){const m=String(text||"").match(/https?:\/\/[^\s<>"']+/i)||String(text||"").match(/\b(?:www\.|pin\.it\/|vm\.tiktok\.com\/)[^\s<>"']+/i);if(!m)return null;let u=m[0].replace(/[),.;!?]+$/,"");if(!/^https?:/i.test(u))u="https://"+u;return u}
+function sourceOf(url){
+  if(!url)return null;
+  let h="";try{h=new URL(url).hostname.replace(/^www\.|^m\./,"").toLowerCase()}catch(e){return{label:"Lien",tone:"muted"}}
+  for(const [re,label,tone] of SOURCES)if(re.test(h))return{label,tone,host:h};
+  return{label:h,tone:"muted",host:h};
+}
+function autoTitle(url){
+  const s=sourceOf(url);if(!s)return "Nouvelle envie";
+  const at=String(url).match(/tiktok\.com\/@([\w.]+)/i)||String(url).match(/instagram\.com\/(?!p\/|reel\/|reels\/|tv\/|stories\/)([\w.]+)/i);
+  return `Inspi ${s.label}${at?` de @${at[1]}`:""}`;
+}
+function ideaIcon(it){const n=norm(it&&it.title);for(const [re,ic] of IDEA_GUESS)if(re.test(n))return ic;const g=guessIcon(it&&it.title,"ingredient");return g==="bowl"?"cakeslice":g}
+function putIdea(id,data){S.ideas[id]=data;setDoc("ideas/"+id,data);saveCache()}
+function delIdea(id){delete S.ideas[id];setDoc("ideas/"+id,null);saveCache()}
+function dayDiff(iso){if(!iso)return null;const d=new Date(iso+"T00:00:00"),t=new Date();t.setHours(0,0,0,0);return Math.round((d-t)/864e5)}
+function dueChip(it){
+  if(!it.due||it.status!=="afaire")return "";
+  const n=dayDiff(it.due);if(n==null||isNaN(n))return "";
+  const d=new Date(it.due+"T00:00:00").toLocaleDateString("fr-FR",{day:"numeric",month:"short"});
+  const txt=n<0?`en retard · ${d}`:n===0?"aujourd'hui":n===1?"demain":n<7?`dans ${n} jours · ${d}`:d;
+  return `<span class="chip ${n<0?"bad":n<=2?"warn":""}">${txt}</span>`;
+}
+function hearts(n,cls){n=Math.round(num(n)||0);if(!n)return "";return `<span class="hearts ${cls||""}" aria-label="${n} sur 5">${[1,2,3,4,5].map(k=>`<svg viewBox="0 0 32 32" class="${k<=n?"on":""}"><use href="#ic-${k<=n?"heartb":"heart"}"/></svg>`).join("")}</span>`}
+function srcChip(url){const s=sourceOf(url);return s?`<span class="chip src"><i class="dot-${s.tone}"></i>${esc(s.label)}</span>`:""}
+function sortedIdeas(st){
+  const q=norm(S.idq);
+  const rows=Object.entries(S.ideas).filter(([id,it])=>(it.status||"envie")===st&&(!q||norm(it.title+" "+(it.note||"")+" "+(it.occasion||"")+" "+(it.verdict||"")).includes(q)));
+  if(st==="afaire")rows.sort((a,b)=>(a[1].due||"9999").localeCompare(b[1].due||"9999")||String(b[1].createdAt).localeCompare(String(a[1].createdAt)));
+  else if(st==="testee")rows.sort((a,b)=>String(b[1].testedAt||b[1].updatedAt).localeCompare(String(a[1].testedAt||a[1].updatedAt)));
+  else rows.sort((a,b)=>String(b[1].createdAt).localeCompare(String(a[1].createdAt)));
+  return rows;
+}
+function viewIdeas(){
+  const st=S.ideaTab;
+  const count=k=>Object.values(S.ideas).filter(i=>(i.status||"envie")===k).length;
+  const total=Object.keys(S.ideas).length;
+  return `<section class="view">
+    ${brand()}
+    <div><h1>Mes envies</h1><p class="sub">Colle un lien Instagram, TikTok ou Pinterest, ou note juste une idée.</p></div>
+    ${statusBanner()}${backupBanner()}
+    <form class="card qadd" id="qadd" autocomplete="off">
+      <label class="sr" for="qa-text">Nouvelle envie</label>
+      <textarea id="qa-text" rows="1" placeholder="Une idée ou un lien d'inspi…" enterkeyhint="done"></textarea>
+      <div class="qa-prev" id="qa-prev" hidden></div>
+      <div class="qa-row">
+        <button type="button" class="btn ghost sm" data-act="qa-paste">${I.paste} Coller un lien</button>
+        <button type="submit" class="btn primary sm">${I.plus} Ajouter</button>
+      </div>
+    </form>
+    <div class="seg" role="group" aria-label="Étape">
+      ${IDEA_ST.map(([k,l])=>`<button data-act="ideatab" data-st="${k}" aria-pressed="${st===k}">${l}<span class="cnt">${count(k)}</span></button>`).join("")}
+    </div>
+    ${total>8?`<div class="search">${I.search}<input id="idq" type="search" placeholder="Chercher une envie" value="${esc(S.idq)}" autocomplete="off"></div>`:""}
+    <ul class="list" id="ideaList">${ideaItems()}</ul>
+  </section>`;
+}
+function ideaItems(){
+  const st=S.ideaTab,rows=sortedIdeas(st);
+  if(!rows.length){
+    if(S.mode==="loading")return `<li class="empty"><b>Chargement…</b></li>`;
+    if(S.idq)return `<li class="empty"><b>Aucune envie trouvée</b></li>`;
+    const msg={envie:["Ton carnet d'envies est vide","Colle un lien Instagram, TikTok ou Pinterest, ou écris juste une idée. Elle arrive ici."],
+      afaire:["Rien de prévu pour l'instant","Sur une envie, touche « Je la prévois » et ajoute une date : elle passe ici, la plus proche en premier."],
+      testee:["Pas encore de test","Quand tu as fait une envie, touche « C'est fait ! » pour la noter et garder ce que tu as appris."]}[st];
+    return `<li class="empty">${icon(st==="testee"?"heartb":st==="afaire"?"candle":"cakeslice")}<b>${msg[0]}</b><span>${msg[1]}</span></li>`;
+  }
+  return rows.map(([id,it])=>{
+    const rec=it.recipeId&&S.recipes[it.recipeId];
+    const chips=[srcChip(it.url),dueChip(it),it.occasion?`<span class="chip">${esc(it.occasion)}</span>`:"",rec?`<span class="chip good">recette · ${moneyR(compute(rec).price)}</span>`:""].filter(Boolean).join("");
+    const sub=it.status==="testee"&&it.verdict?it.verdict:it.note;
+    const next=it.status==="envie"?`<button class="mini" data-act="idea-next" data-id="${esc(id)}">${I.cal} Je la prévois</button>`
+      :it.status==="afaire"?`<button class="mini strong" data-act="idea-next" data-id="${esc(id)}">${I.check} C'est fait !</button>`
+      :(rec?`<button class="mini" data-act="idea-recipe" data-id="${esc(id)}">Voir la recette</button>`:`<button class="mini" data-act="idea-recipe" data-id="${esc(id)}">${I.calc} Calculer son prix</button>`);
+    return `<li class="idea" data-idea="${esc(id)}">
+      <button class="idea-main" data-act="edit-idea" data-id="${esc(id)}">
+        ${icon(ideaIcon(it))}
+        <span class="idea-txt"><b>${esc(it.title||"Sans nom")}</b>${it.status==="testee"?hearts(it.rating,"sm"):""}${sub?`<small>${esc(sub)}</small>`:""}${chips?`<span class="chips">${chips}</span>`:""}</span>
+      </button>
+      <div class="idea-acts">
+        ${it.url?`<a class="mini" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">${I.ext} Voir l'inspi</a>`:""}
+        ${next}
+      </div>
+    </li>`;
+  }).join("");
+}
+function updQaPrev(){
+  const t=$("#qa-text"),p=$("#qa-prev");if(!t||!p)return;
+  t.style.height="auto";t.style.height=Math.min(t.scrollHeight,140)+"px";
+  const u=findUrl(t.value);
+  if(!u){p.hidden=true;return}
+  const s=sourceOf(u),rest=t.value.replace(/https?:\/\/[^\s<>"']+/i,"").trim();
+  p.hidden=false;
+  p.innerHTML=`<span class="chip src"><i class="dot-${s.tone}"></i>${esc(s.label)}</span><span>${rest?"Lien détecté":"Lien détecté · écris un nom si tu veux, sinon je l'appelle « "+esc(autoTitle(u))+" »"}</span>`;
+}
+function quickAdd(){
+  const t=$("#qa-text");const raw=(t.value||"").trim();
+  if(!raw){t.focus();toast("Écris une idée ou colle un lien.");return}
+  const url=findUrl(raw);
+  let title=url?raw.replace(url,"").replace(/https?:\/\/[^\s]+/gi,"").replace(/\s+/g," ").trim():raw;
+  let note="";
+  if(title.length>70){note=title;title=title.slice(0,60).replace(/\s+\S*$/,"")+"…"}
+  if(!title)title=autoTitle(url);
+  const st=S.ideaTab==="testee"?"envie":S.ideaTab;
+  const id=uid(),now=new Date().toISOString();
+  putIdea(id,{title,url:url||"",note,status:st,due:null,occasion:"",rating:null,verdict:"",recipeId:null,createdAt:now,updatedAt:now});
+  t.value="";S.ideaTab=st;saveUi();render();
+  const el=document.querySelector(`[data-idea="${id}"]`);if(el)el.classList.add("flash");
+  toast(st==="afaire"?"Ajoutée à « À faire »":"Ajoutée à tes envies");
+}
+async function qaPaste(){
+  const t=$("#qa-text");
+  try{
+    const txt=await navigator.clipboard.readText();
+    if(!txt){throw new Error("vide")}
+    t.value=(t.value?t.value.trim()+" ":"")+txt.trim();updQaPrev();t.focus();
+  }catch(e){t.focus();toast("Appuie longuement dans le champ, puis « Coller ».")}
+}
+function ideaSheet(id,focusOn){
+  const it=S.ideas[id];if(!it)return;
+  const st=it.status||"envie";
+  openSheet(`<div class="sh-head">${icon(ideaIcon(it))}<h2>${esc(it.title||"Envie")}</h2></div>
+    <label class="field" for="id-title"><span>Nom</span><input id="id-title" value="${esc(it.title)}" placeholder="Tarte citron meringuée"></label>
+    <label class="field" for="id-url"><span>Lien de l'inspi</span>
+      <div class="url-row"><input id="id-url" value="${esc(it.url)}" placeholder="https://…" inputmode="url" autocapitalize="off"><button type="button" class="btn ghost sm" data-act="id-paste">Coller</button></div>
+      <div class="url-src" id="id-src">${it.url?`${srcChip(it.url)} <a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" class="link">Ouvrir</a>`:""}</div>
+    </label>
+    <div class="field"><span>Où elle en est</span>
+      <div class="seg inset" role="group" id="id-st">${IDEA_ST.map(([k,l])=>`<button type="button" data-act="id-st" data-st="${k}" aria-pressed="${st===k}">${l.replace(/s$/,"")}</button>`).join("")}</div>
+    </div>
+    <div id="id-afaire" class="grid2" ${st==="afaire"?"":"hidden"}>
+      <label class="field" for="id-due"><span>Pour quand</span><input id="id-due" type="date" value="${esc(it.due||"")}" ${focusOn==="due"?"autofocus":""}></label>
+      <label class="field" for="id-occ"><span>Pour qui, quelle occasion</span><input id="id-occ" value="${esc(it.occasion||"")}" placeholder="Anniv de Léa"></label>
+    </div>
+    <div id="id-testee" class="field-stack" ${st==="testee"?"":"hidden"}>
+      <div class="field"><span>Ta note</span><div class="rate" id="id-rate">${[1,2,3,4,5].map(k=>`<button type="button" data-act="id-rate" data-v="${k}" aria-label="${k} sur 5" aria-pressed="${(num(it.rating)||0)>=k}"><svg viewBox="0 0 32 32"><use href="#ic-heartb"/></svg></button>`).join("")}</div></div>
+      <label class="field" for="id-verdict"><span>Ce que tu retiens</span><textarea id="id-verdict" placeholder="Crème un peu liquide : 2 feuilles de gélatine la prochaine fois" ${focusOn==="rate"?"autofocus":""}>${esc(it.verdict||"")}</textarea></label>
+    </div>
+    <label class="field" for="id-note"><span>Notes</span><textarea id="id-note" placeholder="Variantes, ingrédients à prévoir, taille du moule…">${esc(it.note||"")}</textarea></label>
+    <button type="button" class="btn ghost block" data-act="idea-recipe" data-id="${esc(id)}">${I.calc} ${it.recipeId&&S.recipes[it.recipeId]?"Voir sa recette et son prix":"En faire une recette pour calculer son prix"}</button>
+    <div id="id-confirm"></div>
+    <div class="sheet-actions">
+      <button class="btn danger" data-act="idea-del">Supprimer</button>
+      <button class="btn primary" data-act="idea-save">Enregistrer</button>
+    </div>`,{type:"idea",id,st,rating:num(it.rating)||0});
+}
+function readIdeaSheet(){
+  const c=sheetCtx,it=S.ideas[c.id];if(!it)return null;
+  const url=($("#id-url").value||"").trim();
+  const d={...clone(it),title:$("#id-title").value.trim()||autoTitle(url),url:url?(findUrl(url)||url):"",note:$("#id-note").value.trim(),status:c.st,
+    due:$("#id-due").value||null,occasion:$("#id-occ").value.trim(),rating:c.rating||null,verdict:$("#id-verdict").value.trim()};
+  if(d.status==="testee"&&it.status!=="testee")d.testedAt=new Date().toISOString();
+  return d;
+}
+function saveIdeaSheet(silent){
+  const c=sheetCtx;const d=readIdeaSheet();if(!d)return;
+  if(JSON.stringify(d)!==JSON.stringify(S.ideas[c.id])){d.updatedAt=new Date().toISOString();putIdea(c.id,d)}
+  if(!silent){closeSheet();if(S.view==="ideas"&&d.status!==S.ideaTab){S.ideaTab=d.status;saveUi()}render();
+    const el=document.querySelector(`[data-idea="${c.id}"]`);if(el)el.classList.add("flash");toast("Envie enregistrée")}
+}
+function ideaToRecipe(id){
+  const it=S.ideas[id];if(!it)return;
+  if(it.recipeId&&S.recipes[it.recipeId]){closeSheet();openRecipe(it.recipeId,"ideas");return}
+  const rid=uid(),now=new Date().toISOString();
+  const notes=[it.note,it.verdict&&("Ce que je retiens : "+it.verdict),it.url&&("Inspi : "+it.url)].filter(Boolean).join("\n");
+  putRecipe(rid,{name:it.title,category:it.occasion||"",portions:null,lines:[],pack:[],laborMin:null,ovenMin:null,pricing:{mode:"profit",value:null},friendPrice:null,notes,createdAt:now,updatedAt:now});
+  putIdea(id,{...clone(it),recipeId:rid,updatedAt:now});
+  closeSheet();openRecipe(rid,"ideas");toast("Recette créée : ajoute ses ingrédients");
+}
+
+/* ---------- rappel de sauvegarde ---------- */
+function bk(){const b=lsGet(BK_KEY)||{};if(!b.first){b.first=new Date().toISOString();lsSet(BK_KEY,b)}return b}
+function markBackup(){const b=bk();b.last=new Date().toISOString();delete b.snooze;lsSet(BK_KEY,b)}
+function backupDays(){const b=bk();return b.last?Math.floor((Date.now()-Date.parse(b.last))/864e5):null}
+function backupBanner(){
+  if(S.mode!=="local")return "";
+  const n=Object.keys(S.recipes).length+Object.keys(S.ideas).length;if(!n)return "";
+  const b=bk(),now=Date.now();
+  if(b.snooze&&now<Date.parse(b.snooze))return "";
+  const d=backupDays();
+  let msg;
+  if(d==null){if(now-Date.parse(b.first)<3*864e5)return "";msg="Tu n'as encore jamais fait de sauvegarde."}
+  else if(d>=30)msg=`Ta dernière sauvegarde date de ${d} jours.`;
+  else return "";
+  return `<div class="bk-banner">${icon("tag","sm")}<span><b>Pense à sauvegarder</b>${msg} Tes recettes et envies ne sont que sur ce téléphone.</span>
+    <div class="bk-acts"><button class="btn primary sm" data-act="export">Sauvegarder</button><button class="link" data-act="bk-later">Plus tard</button></div></div>`;
+}
+
 /* ---------- render ---------- */
 function render(){
   const main=$("#main");
@@ -900,6 +1150,7 @@ function render(){
   if(inDetail){main.innerHTML=viewRecipe();updateComputed();return}
   if(S.view==="ings")main.innerHTML=viewIngs();
   else if(S.view==="settings")main.innerHTML=viewSettings();
+  else if(S.view==="ideas")main.innerHTML=viewIdeas();
   else main.innerHTML=viewRecipes();
 }
 function brand(){return `<div class="brand">${I.cup}<span class="brand-name">Calculateur pâtisserie</span><button class="dedic" data-act="goomba" aria-label="Fait pour Goombouille"><span class="dedic-txt"><small>fait pour</small>Goombouille</span><span class="goomba"><svg viewBox="0 0 32 32"><use href="#ic-goomba"/></svg></span></button></div>`}
@@ -920,7 +1171,7 @@ function viewRecipes(){
   return `<section class="view">
     ${brand()}
     <div><h1>Mes recettes</h1><p class="sub">${n?`${n} création${n>1?"s":""} · ton temps compté à ${moneyR(num(S.settings.hourlyRate)||0)}/h`:"Calcule le vrai prix de chaque gâteau."}</p></div>
-    ${statusBanner()}
+    ${statusBanner()}${backupBanner()}
     ${n>3?`<div class="search">${I.search}<input id="q" type="search" placeholder="Chercher une recette" value="${esc(S.q)}" autocomplete="off"></div>`:""}
     <button class="btn primary block" data-act="new-recipe" id="btn-new-recipe">${I.plus} Nouvelle recette</button>
     <ul class="list" id="recipeList">${recipeItems()}</ul>
@@ -1044,6 +1295,7 @@ function viewSettings(){
     <h2 class="sec">Données</h2>
     <div class="card" style="display:flex;flex-direction:column;gap:12px">
       <div class="status">${sync}</div>
+      ${S.mode==="local"?`<p class="hint">${(()=>{const d=backupDays();return d==null?"Aucune sauvegarde faite pour l'instant.":d===0?"Dernière sauvegarde : aujourd'hui.":d===1?"Dernière sauvegarde : hier.":`Dernière sauvegarde : il y a ${d} jours.`})()}</p>`:""}
       <div class="grid2">
         <button class="btn ghost" data-act="export">${I.copy} Sauvegarder</button>
         <button class="btn ghost" data-act="import">Restaurer</button>
@@ -1062,7 +1314,7 @@ function viewRecipe(){
   const r=S.draft;
   return `<section class="view">
     <div class="dhead">
-      <button class="back" data-act="back">${I.chev} Recettes</button>
+      <button class="back" data-act="back">${I.chev} ${S.backTo==="ideas"?"Envies":"Recettes"}</button>
       <button class="icon-btn" data-act="recipe-menu" aria-label="Plus d'actions">${I.dots}</button>
     </div>
     <input class="title-input" id="r-name" data-f="name" value="${esc(r.name)}" placeholder="Nom de la création" autocomplete="off">
@@ -1407,11 +1659,12 @@ function scaleSheet(){
     <div class="sheet-actions"><button class="btn ghost" data-act="close-sheet">Annuler</button><button class="btn primary" data-act="scale-go">Adapter</button></div>`,{type:"scale"});
 }
 function exportSheet(){
-  const data=JSON.stringify({app:"calculateur-patisserie",v:1,date:today(),ingredients:S.ings,recipes:S.recipes,settings:S.settings});
+  const data=JSON.stringify({app:"calculateur-patisserie",v:1,date:today(),ingredients:S.ings,recipes:S.recipes,ideas:S.ideas,settings:S.settings});
   openSheet(`<h2>Sauvegarde</h2>
-    <p class="hint">Copie ce texte et garde-le dans tes notes ou envoie-le toi par message. Il contient toutes tes recettes et tes prix.</p>
+    <p class="hint">Garde ce texte dans tes notes ou envoie-le toi par message. Il contient tes recettes, tes prix et tes envies. Pour tout récupérer : Réglages, puis Restaurer.</p>
     <textarea class="mono" id="exp-text" readonly>${esc(data)}</textarea>
-    <button class="btn primary block" data-act="copy-export">${I.copy} Copier la sauvegarde</button>`,{type:"export"});
+    ${navigator.share?`<button class="btn primary block" data-act="share-export">Envoyer dans Notes ou Messages</button>`:""}
+    <button class="btn ${navigator.share?"ghost":"primary"} block" data-act="copy-export">${I.copy} Copier la sauvegarde</button>`,{type:"export"});
 }
 function importSheet(){
   openSheet(`<h2>Restaurer une sauvegarde</h2>
@@ -1421,20 +1674,21 @@ function importSheet(){
 }
 
 /* ---------- actions ---------- */
-function openRecipe(id){
+function openRecipe(id,from){
   const r=S.recipes[id];if(!r)return;
+  S.backTo=from||"recipes";
   S.openId=id;S.draft=clone(r);S.draft.lines=S.draft.lines||[];S.draft.pack=S.draft.pack||[];
   S.view="recipe";S.tab="compo";render();window.scrollTo(0,0);
 }
-function leaveRecipe(){commitDraft();S.draft=null;S.openId=null;S.view="recipes";render();window.scrollTo(0,0)}
+function leaveRecipe(){commitDraft();S.draft=null;S.openId=null;S.view=S.backTo==="ideas"?"ideas":"recipes";S.backTo=null;render();window.scrollTo(0,0)}
 function newRecipe(){
   const id=uid();
   const r={name:"",category:"",portions:null,lines:[],pack:[],laborMin:null,ovenMin:null,pricing:{mode:"profit",value:null},friendPrice:null,notes:"",createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()};
   putRecipe(id,r);openRecipe(id);
   setTimeout(()=>{const n=$("#r-name");if(n)n.focus()},60);
 }
-function copyText(text,okMsg,fallbackEl){
-  const done=()=>toast(okMsg);
+function copyText(text,okMsg,fallbackEl,onOk){
+  const done=()=>{toast(okMsg);if(onOk)onOk()};
   try{
     navigator.clipboard.writeText(text).then(done,()=>{if(fallbackEl){fallbackEl.focus();fallbackEl.select()}toast("Copie bloquée : le texte est sélectionné, copie-le à la main.")});
   }catch(e){if(fallbackEl){fallbackEl.focus();fallbackEl.select()}toast("Copie bloquée : sélectionne le texte à la main.")}
@@ -1516,14 +1770,43 @@ document.addEventListener("click",e=>{
       const txt=`${r.name||"Création"}${c.portions?` (${fnum(c.portions)} parts)`:""}\nPrix : ${moneyR(c.price)}${c.perPart?`, soit ${money(c.perPart)} la part`:""}`;
       copyText(txt,"Prix copié, prêt à envoyer");break;}
     case "export":exportSheet();break;
-    case "copy-export":copyText($("#exp-text").value,"Sauvegarde copiée",$("#exp-text"));break;
+    case "copy-export":copyText($("#exp-text").value,"Sauvegarde copiée : colle-la dans tes notes",$("#exp-text"),markBackup);break;
+    case "share-export":{
+      const txt=$("#exp-text").value;
+      navigator.share({title:"Sauvegarde pâtisserie "+today(),text:txt}).then(()=>{markBackup();closeSheet();render();toast("Sauvegarde envoyée")},err=>{if(err&&err.name==="AbortError")return;toast("Envoi impossible ici : utilise « Copier ».")});
+      break;}
+    case "bk-later":{const b=bk();b.snooze=new Date(Date.now()+7*864e5).toISOString();lsSet(BK_KEY,b);render();break;}
+    case "ideatab":S.ideaTab=a.dataset.st;saveUi();render();break;
+    case "qa-paste":qaPaste();break;
+    case "edit-idea":ideaSheet(a.dataset.id);break;
+    case "idea-next":{
+      const id=a.dataset.id,it=S.ideas[id];if(!it)break;
+      const now=new Date().toISOString();
+      if(it.status==="afaire"){putIdea(id,{...clone(it),status:"testee",testedAt:now,updatedAt:now});ideaSheet(id,"rate");sheetCtx.st="testee"}
+      else{putIdea(id,{...clone(it),status:"afaire",updatedAt:now});ideaSheet(id,"due")}
+      render();break;}
+    case "idea-recipe":{if(sheetCtx&&sheetCtx.type==="idea")saveIdeaSheet(true);ideaToRecipe(a.dataset.id);break;}
+    case "id-st":{
+      sheetCtx.st=a.dataset.st;a.parentNode.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b===a));
+      $("#id-afaire").hidden=sheetCtx.st!=="afaire";$("#id-testee").hidden=sheetCtx.st!=="testee";break;}
+    case "id-rate":{
+      const v=Number(a.dataset.v);sheetCtx.rating=sheetCtx.rating===v?v-1:v;
+      document.querySelectorAll("#id-rate button").forEach(b=>b.setAttribute("aria-pressed",Number(b.dataset.v)<=sheetCtx.rating));break;}
+    case "id-paste":{
+      const inp=$("#id-url");
+      (navigator.clipboard&&navigator.clipboard.readText?navigator.clipboard.readText():Promise.reject()).then(txt=>{inp.value=findUrl(txt)||txt.trim();inp.dispatchEvent(new Event("input",{bubbles:true}))},()=>{inp.focus();toast("Appuie longuement dans le champ, puis « Coller ».")});
+      break;}
+    case "idea-save":saveIdeaSheet();break;
+    case "idea-del":$("#id-confirm").innerHTML=`<div class="banner bad" style="flex-direction:column;gap:10px">Supprimer cette envie ?<button class="btn danger block" data-act="idea-del-yes" style="background:var(--bad);color:var(--paper)">Oui, supprimer</button></div>`;break;
+    case "idea-del-yes":{delIdea(sheetCtx.id);closeSheet();render();toast("Envie supprimée");break;}
     case "import":importSheet();break;
     case "import-go":{
       let d;try{d=JSON.parse($("#imp-text").value)}catch(err){toast("Ce texte n'est pas une sauvegarde valide.");return}
-      if(!d||typeof d!=="object"||(!d.ingredients&&!d.recipes)){toast("Ce texte n'est pas une sauvegarde de l'app.");return}
+      if(!d||typeof d!=="object"||(!d.ingredients&&!d.recipes&&!d.ideas)){toast("Ce texte n'est pas une sauvegarde de l'app.");return}
       let n=0;
       Object.entries(d.ingredients||{}).forEach(([id,v])=>{if(v&&v.name){putIng(id,v);n++}});
       Object.entries(d.recipes||{}).forEach(([id,v])=>{if(v&&typeof v==="object"){putRecipe(id,v);n++}});
+      Object.entries(d.ideas||{}).forEach(([id,v])=>{if(v&&typeof v==="object"&&v.title){putIdea(id,v);n++}});
       if(d.settings){S.settings={...DEFAULTS,...d.settings};setDoc("settings/main",clone(S.settings))}
       saveLocal();saveCache();closeSheet();render();toast(`${n} éléments restaurés`);break;}
   }
@@ -1533,6 +1816,10 @@ document.addEventListener("input",e=>{
   const t=e.target;
   if(t.id==="q"){S.q=t.value;$("#recipeList").innerHTML=recipeItems();return}
   if(t.id==="iq"){S.iq=t.value;$("#ingList").innerHTML=ingItems();return}
+  if(t.id==="idq"){S.idq=t.value;$("#ideaList").innerHTML=ideaItems();return}
+  if(t.id==="qa-text"){updQaPrev();return}
+  if(t.id==="id-url"){const u=findUrl(t.value);$("#id-src").innerHTML=u?`${srcChip(u)} <a href="${esc(u)}" target="_blank" rel="noopener noreferrer" class="link">Ouvrir</a>`:"";return}
+  if(t.id==="id-title"){const h=document.querySelector("#sheetBody .sh-head use");if(h)h.setAttribute("href","#ic-"+ideaIcon({title:t.value}));return}
   if(t.id==="pick-q"){renderPick();$("#pk-scroll").scrollTop=0;return}
   if(t.closest("#sheetBody")&&sheetCtx&&sheetCtx.type==="ing"){updIngOut();return}
   if(t.closest("#sheetBody")&&sheetCtx&&sheetCtx.type==="scale"){
@@ -1559,7 +1846,10 @@ document.addEventListener("change",e=>{
   if(t.id==="ing-unit"){updIngOut();return}
   if(t.dataset.set==="rounding"){S.settings.rounding=Number(t.value);if(S.mode==="local")saveLocal();saveSettingsSoon()}
 });
+document.addEventListener("submit",e=>{if(e.target&&e.target.id==="qadd"){e.preventDefault();quickAdd()}});
 document.addEventListener("keydown",e=>{
+  if(e.key==="Enter"&&!e.shiftKey&&e.target.id==="qa-text"){e.preventDefault();quickAdd()}
+  if(e.key==="Enter"&&sheetCtx&&sheetCtx.type==="idea"&&e.target.tagName==="INPUT"&&e.target.type!=="date"){e.preventDefault();saveIdeaSheet()}
   if(e.key==="Escape"&&!$("#sheet").hidden)closeSheet();
   if(e.key==="Enter"&&sheetCtx&&sheetCtx.type==="ing"&&e.target.tagName==="INPUT"){e.preventDefault();saveIng()}
   if(e.key==="Enter"&&sheetCtx&&sheetCtx.type==="pick"&&e.target.id==="pick-q"){e.preventDefault();e.target.blur()}
